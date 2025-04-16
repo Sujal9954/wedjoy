@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Signup = () => {
   const { register, handleSubmit } = useForm();
@@ -137,6 +137,8 @@ export const Signup = () => {
             borderRadius: "5px"
           }} />
         </div>
+        <p>Already have an account?<Link to={"/login"}>LOGIN HERE</Link></p>
+
       </form>
       
       <ToastContainer />

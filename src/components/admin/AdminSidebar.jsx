@@ -1,31 +1,30 @@
+import React from 'react'
+import { AdminNavbar } from '../admin/AdminNavbar'
+import { Outlet } from 'react-router-dom'
 
-import React from "react";
-import { UserNavbar } from "./UserNavbar";
-import { Outlet } from "react-router-dom";
-
-export const UserSidebar = () => {
+export const AdminSidebar = () => {
   return (
     <>
-      <UserNavbar></UserNavbar>
-      <aside
+    <AdminNavbar></AdminNavbar>
+    <aside
         className="app-sidebar bg-body-secondary shadow"
         data-bs-theme="dark"
       >
+
         <div className="sidebar-brand">
-          {/*begin::Brand Link*/}
+          
           <a href="./index.html" className="brand-link">
-            {/*begin::Brand Image*/}
-            {/* <img
-              src="../../dist/assets/img/AdminLTELogo.png"
-              alt="AdminLTE Logo"
+            
+            <img
+              src="../../src/assets/img/AdminLTELogo.png"
+              alt="Admin Logo"
               className="brand-image opacity-75 shadow"
-            /> */}
-            {/*end::Brand Image*/}
-            {/*begin::Brand Text*/}
-            <span className="brand-text fw-light">User</span>
-            {/*end::Brand Text*/}
+            />
+            
+            <span className="brand-text fw-light">AdminLTE 4</span>
+            
           </a>
-          {/*end::Brand Link*/}
+          
         </div>
 
         <div
@@ -44,7 +43,7 @@ export const UserSidebar = () => {
           }}
         >
           <nav className="mt-2">
-            {/*begin::Sidebar Menu*/}
+            
             <ul
               className="nav sidebar-menu flex-column"
               data-lte-toggle="treeview"
@@ -116,13 +115,15 @@ export const UserSidebar = () => {
                 </ul>
               </li>
             </ul>
-            {/*end::Sidebar Menu*/}
+            
           </nav>
         </div>
-      </aside>
-      <main className="app-main">
-        <Outlet/>
-      </main>
+      </aside>
+<main class="app-main">
+    <Outlet></Outlet>
+</main>
+      
+
     </>
-  );
-};
+  )
+}

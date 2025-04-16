@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import'../../assets/UserForm.css'
+
 
 export const UserForm = () => {
   const [formData, setFormData] = useState({
@@ -31,13 +33,13 @@ export const UserForm = () => {
       guests: "1",
       meal: "vegetarian",
       message: "",
-    });
+    }); 
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={{fontFamily:"Great Vibes"}}>Charmingly Yours - Wedding Form</h1>
-      <form onSubmit={handleSubmit} style={styles.form}>
+    <div class='container'>
+      <h1 style={{fontFamily:"Great Vibes"}}>Charmingly Yours - Wedding Register</h1>
+      <form onSubmit={handleSubmit} class='form'>
       <div> <label> Your Full Name:</label></div>
         <input type="text" name="yourName" value={formData.yourName} onChange={handleChange} required />
         <br /><br />
@@ -82,36 +84,13 @@ export const UserForm = () => {
         <div><label>Special Message for the Couple:</label></div>
         <textarea name="message" value={formData.message} onChange={handleChange} rows="3"></textarea>
          <br /><br />
-        <button type="submit" style={styles.button}>Submit</button>
+        <button type="submit" class='button'>Submit</button>
       </form>
     </div>
   );
 };
 
 
-const styles = {
- 
-  container: {
-    textAlign: "center",
-    padding: "20px",
-  },
-  form: {
-    background: "#fff",
-    maxWidth: "400px",
-    margin: "auto",
-    padding: "20px",
-    borderRadius: "8px",
-    boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)",
-  },
-  button: {
-    backgroundColor: "#ff66b2",
-    color: "white",
-    padding: "10px",
-    border: "none",
-    borderRadius: "5px",
-    marginTop: "15px",
-    cursor: "pointer",
-  },
-};
+
 
 export default UserForm;

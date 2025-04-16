@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Keep Link for proper routing
 // Assuming the image is in the public folder
 import userImage from '../../assets/img/user2-160x160.jpg'; // Correctly import the image
 
-export const UserNavbar = () => {
+export const AdminNavbar = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -16,8 +16,7 @@ export const UserNavbar = () => {
   };
 
   return (
-    
-    <nav className="app-header navbar navbar-expand bg-body ">
+    <nav className="app-header navbar navbar-expand bg-body">
       <div className="container-fluid">
         <ul className="navbar-nav">
           {/* Other navbar items */}

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,11 +25,11 @@ export const Login = () => {
       if (res.status === 200) {
         loginsuccess();
         setTimeout(() => {
-          navigate("/user");
+          // navigate("/user");
         }, 2000);
 
         localStorage.setItem("id", res.data.data._id);
-        localStorage.setItem("name", res.data.data.roleId.name);
+        localStorage.setItem("role", res.data.data.roleId.name);
       } else {
         loginfail();
       }
@@ -42,14 +42,13 @@ export const Login = () => {
   return (
     <div
       style={{
-        width: "29%",
+        width: "30%",
         margin: "auto",
-        background: "#f8f8f8",
         padding: "20px",
         borderRadius: "8px",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
         textAlign: "center",
-        marginTop: "50px",  
+        marginTop: "160px",  
       }}
     >
       <h1
@@ -119,7 +118,7 @@ export const Login = () => {
         </div>
 
         <div>
-          <input
+          <input onClick={() => navigate("/plan")}
             type="submit"
             value="Login"
             style={{
@@ -133,11 +132,12 @@ export const Login = () => {
             }}
           />
         </div>
+        <p>Not have an account?<Link to={"/signup"}>SIGN UP HERE</Link></p>
       </form>
 
       <ToastContainer
         position="top-center"
-        autoClose={1500}
+        autoClose={100}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}
