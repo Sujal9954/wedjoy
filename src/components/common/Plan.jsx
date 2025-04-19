@@ -1,16 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Plan() {
   const [selectedTab, setSelectedTab] = useState("budget");
-
+  const navigate = useNavigate()
   return (
     <div className="max-w-4xl mx-auto p-6">
+      <br /><br />
       <h1 className="text-3xl font-bold text-center mb-6">
         Plan: Your Dream Wedding Planner
       </h1>
 
       <div className="grid grid-cols-5 gap-2 bg-gray-100 p-2 rounded-lg">
-        {["budget", "venue", "guests", "checklist", "invitations"].map((tab) => (
+        {["budget", "venue", "guests", "checklist"].map((tab) => (
           <button
             key={tab}
             className={`px-3 py-2 rounded-md ${
@@ -22,7 +24,7 @@ export default function Plan() {
             {tab === "venue" && "🏰 Venue"}
             {tab === "guests" && "👥 Guest List"}
             {tab === "checklist" && "📋 Checklist"}
-            {tab === "invitations" && "✉️ Invitations"}
+            {/* {tab === "invitations" && "✉️ Invitations"} */}
           </button>
         ))}
       </div>
@@ -46,6 +48,8 @@ export default function Plan() {
               <p>🔹 Venue 1: Grand Palace</p>
               <p>🔹 Venue 2: Beachside Resort</p>
               <p>🔹 Venue 3: Garden Paradise</p>
+              <button onClick={()=>{navigate("/register"),(scrollTo(0,0))}} className="bg-orange-300 text-white px-4 py-2 rounded">Venue Menu</button>
+ 
             </div>
           </>
         )}
@@ -62,128 +66,21 @@ export default function Plan() {
             <h2 className="text-xl font-semibold">Wedding Checklist</h2>
             <p>Stay on track with a step-by-step planning guide.</p>
             <ul className="mt-4 list-disc pl-6">
-              <li>✅ Book Venue</li>
-              <li>✅ Choose Caterer</li>
+              <li>🔲 Book Venue</li>
+              <li>🔲 Choose Caterer</li>
               <li>🔲 Send Invitations</li>
             </ul>
           </>
         )}
-        {selectedTab === "invitations" && (
+        {/* {selectedTab === "invitations" && (
           <>
             <h2 className="text-xl font-semibold">Send Invitations</h2>
             <p>Create and send personalized digital or printed wedding invites.</p>
             <button className="bg-orange-300 text-white px-4 py-2 rounded mt-4">Create Invitation</button>
           </>
-        )}
+        )} */}
       </div>
     </div>
   );
 }
 
-
-
-
-// import React, { useState } from "react";
-
-// const checklistData = [
-//     {
-//         category: "Venue",
-//         icon: "📍",
-//         tasks: ["Research venues", "Book venue", "Visit location"]
-//     },
-//     {
-//         category: "Wedding Website",
-//         icon: "💻",
-//         tasks: [
-//             "Browse free website designs",
-//             "Set up a gift registry",
-//             "Share wedding website with guests",
-//             "Add cover photo & event details",
-//             "Add travel & hotel info",
-//             "Set up RSVPs"
-//         ]
-//     },
-//     {
-//         category: "Photos & Videos",
-//         icon: "📷",
-//         tasks: ["Hire photographer", "Book videographer", "Plan photo shoot"]
-//     },
-//     {
-//         category: "Food & Drink",
-//         icon: "🍽",
-//         tasks: ["Choose menu", "Book caterer", "Confirm guest meals"]
-//     },
-//     {
-//         category: "Attire",
-//         icon: "👗",
-//         tasks: ["Buy wedding dress", "Get alterations", "Pick groom's outfit"]
-//     },
-//     {
-//         category: "Music",
-//         icon: "🎵",
-//         tasks: ["Hire DJ/Band", "Make playlist", "Schedule first dance"]
-//     },
-//     {
-//         category: "Flowers & Decor",
-//         icon: "🌸",
-//         tasks: ["Choose color theme", "Book florist", "Select table decor"]
-//     }
-// ];
-
-// const Plan = () => {
-//     const [openSections, setOpenSections] = useState({});
-//     const [completedTasks, setCompletedTasks] = useState({});
-
-//     const toggleSection = (category) => {
-//         setOpenSections((prev) => ({
-//             ...prev,
-//             [category]: !prev[category]
-//         }));
-//     };
-
-//     const toggleTask = (category, task) => {
-//         setCompletedTasks((prev) => ({
-//             ...prev,
-//             [category]: {
-//                 ...prev[category],
-//                 [task]: !prev[category]?.[task]
-//             }
-//         }));
-//     };
-
-//     return (
-//         <div className="p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg">
-//           <br /><br />
-//             {checklistData.map(({ category, icon, tasks }) => (
-//                 <div key={category} className="mb-4 border rounded-lg">
-//                     <button
-//                         onClick={() => toggleSection(category)}
-//                         className="flex justify-between w-full p-4 text-lg font-semibold bg-gray-100"
-//                     >
-//                         <span>{icon} {category}</span>
-//                         <span>{openSections[category] ? "▲" : "▼"}</span>
-//                     </button>
-//                     {openSections[category] && (
-//                         <ul className="p-4 bg-white">
-//                             {tasks.map((task) => (
-//                                 <li key={task} className="flex items-center space-x-2 py-2">
-//                                     <input
-//                                         type="checkbox"
-//                                         checked={completedTasks[category]?.[task] || false}
-//                                         onChange={() => toggleTask(category, task)}
-//                                         className="w-5 h-5"
-//                                     />
-//                                     <span className={completedTasks[category]?.[task] ? "line-through text-gray-500" : ""}>
-//                                         {task}
-//                                     </span>
-//                                 </li>
-//                             ))}
-//                         </ul>
-//                     )}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// };
-
-// export default Plan;

@@ -8,44 +8,8 @@ export const Footer = () => {
     const navigate = useNavigate()
 
     return (
-        // <footer className="footer">
-        //     <div className="footer-top">
-        //         <h2>Save the date <span className="footer-logo">Wed Joy™</span></h2>
-        //     </div>
-        //     <div className="footer-content">
-        //         <div className="footer-links">
-        //             <a href="#">Joy Wedding</a>
-        //             <a href="#"> <span className="new-badge">New</span></a>
-        //         </div>
-        //         <div className="footer-buttons">
-        //             <button className="footer-btn">Get Started</button>
-        //             <a href="#" className="footer-link">Log in</a>
-        //             <a href="#" className="footer-link">Find an Event</a>
-        //         </div>
-        //         <div className="footer-nav">
-        //             <a href="#" className='text-black'>Shipping</a>
-        //             <a href="#" className='text-black'>Returns</a>
-        //             <a href="#" className='text-black'>Newsroom</a>
-        //             <a href="#" className='text-black'>Careers</a>
-        //             <a href="#" className='text-black'>About Joy</a>
-        //             <a href="#" className='text-black'>Contact Us</a>
-        //         </div>
-        //         <div className="social-icons">
-        //             <i className="fab fa-instagram"></i>
-        //             <i className="fab fa-pinterest"></i>
-        //             <i className="fab fa-facebook"></i>
-        //             <i className="fab fa-twitter"></i>
-        //         </div>
-        //     </div>
-        //     <div className="footer-bottom">
-        //         <p>© 2025 Joy. All rights reserved.</p>
-        //         <div className="footer-policy">
-        //             <a href="#">Terms & Privacy</a>
-        //             <a href="#">California Privacy Notice</a>
-        //             <a href="#">Do not share my personal information</a>
-        //         </div>
-        //     </div>
-        // </footer>
+       <div>
+        
               <footer className="bg-gray-900 text-white text-sm">
                 <div className=" mx-auto px-6 py-8">
                   {/* Top Section */}
@@ -93,6 +57,6 @@ export const Footer = () => {
                   </div>
                 </div>
               </footer>
-          
+              </div>
     );
 };

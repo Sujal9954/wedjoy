@@ -84,7 +84,7 @@ export default function Venue() {
 
   return (
     <div className="bg-gray-100 min-h-screen p-10">
-      <h1 className="text-3xl font-bold text-center mb-8">Find Your Dream Venue</h1>
+      <h1 className="tel font-bolxt-3xd text-center mb-8">Find Your Dream Venue</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {venues.map((venue, index) => (
           <div key={index} className="bg-white rounded-xl shadow-lg p-4">
@@ -101,7 +101,7 @@ export default function Venue() {
               <button className="mt-3 w-full bg-orange-400 text-white py-2 rounded-lg hover:bg-orange-500">
                 Book Now
               </button>
-            </div>
+            </div>  
           </div>
         ))}
       </div>

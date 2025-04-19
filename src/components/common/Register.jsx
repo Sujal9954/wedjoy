@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Footer } from "./Footer";
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -39,7 +40,8 @@ export default function Register() {
 
   return (
     
-    <div className="max-w-lg mx-auto  p-6 border rounded-lg shadow-md bg-white mt-10">
+    <div className="max-w-lg mx-auto  p-6 border rounded-lg shadow-md bg-white mt-20 mb-10">
+      
         
       <h2 className="text-3xl font-bold text-center mb-6">💍 Register for Your Dream Wedding</h2>
 
@@ -155,6 +157,9 @@ export default function Register() {
           🎉 Create Your Wedding Plan
         </button>
       </form>
+      <br /><br />
+       {/* <Footer /> */}
     </div>
+    
   );
 }
